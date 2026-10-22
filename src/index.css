@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Nunito', Arial, sans-serif;
+  color: #20263a;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.encabezado {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7eaf1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+.pokeball {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 6px solid #e84d5b;
+  border-radius: 50%;
+  color: #e84d5b;
+  font-size: 15px;
+}
+
+.encabezado > p {
+  color: #747c90;
+  font-size: 14px;
+}
+
+.presentacion {
+  margin: 35px 0 48px;
+  padding: 45px 50px;
+  min-height: 270px;
+  border-radius: 25px;
+  background: linear-gradient(120deg, #fff0f0, #ffe2e5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.presentacion > div:first-child {
+  max-width: 570px;
+}
+
+.etiqueta {
+  color: #d94352;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.presentacion h1 {
+  max-width: 550px;
+  margin: 14px 0;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+.presentacion p {
+  max-width: 490px;
+  color: #6e7384;
+  line-height: 1.8;
+}
+
+.pokeball-grande {
+  flex-shrink: 0;
+  width: 165px;
+  height: 165px;
+  margin-right: 30px;
+  border: 18px solid #e84d5b;
+  border-radius: 50%;
+  background: linear-gradient(
+    to bottom,
+    #e84d5b 0%,
+    #e84d5b 44%,
+    #272b38 44%,
+    #272b38 56%,
+    #fff 56%,
+    #fff 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-15deg);
+}
+
+.pokeball-grande span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 8px solid #272b38;
+  border-radius: 50%;
+  background: white;
+  color: white;
+  font-size: 0;
+}
+
+.catalogo {
+  padding-bottom: 35px;
+}
+
+.catalogo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.catalogo-titulo h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.catalogo-titulo p {
+  margin: 7px 0 0;
+  color: #81879a;
+  font-size: 14px;
+}
+
+.contador {
+  padding: 9px 14px;
+  border-radius: 20px;
+  background: #ffe7e9;
+  color: #cf3948;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 570px;
+  height: 52px;
+  margin-bottom: 18px;
+  padding: 0 17px;
+  border: 1px solid #e3e7ef;
+  border-radius: 13px;
+  background: white;
+  color: #858b9b;
+}
+
+.buscador > span {
+  font-size: 28px;
+}
+
+.buscador input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #20263a;
+}
+
+.filtros {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.filtros label {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.filtros select {
+  min-width: 180px;
+  padding: 11px 14px;
+  border: 1px solid #e3e7ef;
+  border-radius: 10px;
+  background: white;
+  color: #20263a;
+  outline-color: #e84d5b;
+}
+
+.limpiar-filtros {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #ffe7e9;
+  color: #c93646;
+  font-weight: 800;
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.tarjeta {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+  background: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px #29334d12;
+}
+
+.imagen-pokemon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 190px;
+  background: #f2f5fa;
+}
+
+.imagen-pokemon img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+}
+
+.numero {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  color: #9299aa;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.informacion {
+  padding: 17px;
+}
+
+.informacion h3 {
+  margin: 0 0 13px;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.tipos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tipo {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #edf0f5;
+  color: #51596b;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.tipo-grass { background: #dff5df; color: #338047; }
+.tipo-fire { background: #ffe1d8; color: #c34b31; }
+.tipo-water { background: #dceaff; color: #3266b5; }
+.tipo-electric { background: #fff2bf; color: #927000; }
+.tipo-bug { background: #e8f3c8; color: #627c25; }
+.tipo-poison { background: #f0defa; color: #8243a6; }
+.tipo-normal { background: #e9e9ed; color: #626573; }
+.tipo-flying { background: #e3e6ff; color: #5a60ac; }
+.tipo-ground { background: #f3e1cb; color: #8d623c; }
+.tipo-fairy { background: #ffe1ef; color: #ad4f7e; }
+.tipo-fighting { background: #f8dada; color: #a43b3b; }
+.tipo-psychic { background: #ffddeb; color: #b43c72; }
+.tipo-rock { background: #e9e0ce; color: #796344; }
+.tipo-ice { background: #d8f6f5; color: #368e91; }
+.tipo-ghost { background: #e5def6; color: #65519a; }
+.tipo-dragon { background: #e1e0ff; color: #4e4bb3; }
+.tipo-dark { background: #dedce0; color: #46424c; }
+.tipo-steel { background: #e0e7ed; color: #5c6b79; }
+
+.estadisticas {
+  display: flex;
+  gap: 22px;
+  margin-top: 19px;
+  padding-top: 14px;
+  border-top: 1px solid #edf0f5;
+}
+
+.estadisticas div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.estadisticas strong {
+  font-size: 13px;
+}
+
+.estadisticas span {
+  color: #8b91a0;
+  font-size: 11px;
+}
+
+.mensaje {
+  padding: 20px 0;
+  color: #777f91;
+}
+
+.error {
+  color: #c33443;
+}
+
+.error button,
+.cargar-mas button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #e84d5b;
+  color: white;
+  font-weight: 800;
+}
+
+.cargar-mas {
+  display: flex;
+  justify-content: center;
+  margin: 35px 0 10px;
+}
+
+.cargar-mas button:hover,
+.error button:hover {
+  background: #ca3544;
+}
+
+.cargar-mas button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 25px 0;
+  border-top: 1px solid #e7eaf1;
+  color: #858b9b;
+  font-size: 12px;
+}
+
+.pie a {
+  color: #d94352;
+  font-weight: 800;
+}
+
+@media (max-width: 1000px) {
+  .rejilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .presentacion {
+    padding: 35px;
+  }
+
+  .pokeball-grande {
+    width: 130px;
+    height: 130px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 0 18px;
+  }
+
+  .encabezado {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .encabezado > p {
+    max-width: 130px;
+    text-align: right;
+    font-size: 12px;
+  }
+
+  .presentacion {
+    margin: 22px 0 35px;
+    padding: 28px 23px;
+    min-height: 0;
+  }
+
+  .presentacion h1 {
+    font-size: 30px;
+  }
+
+  .presentacion p {
+    font-size: 13px;
+  }
+
+  .pokeball-grande {
+    display: none;
+  }
+
+  .catalogo-titulo h2 {
+    font-size: 23px;
+  }
+
+  .catalogo-titulo p {
+    max-width: 240px;
+    line-height: 1.5;
+  }
+
+  .rejilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .imagen-pokemon {
+    height: 145px;
+  }
+
+  .informacion {
+    padding: 12px;
+  }
+
+  .informacion h3 {
+    font-size: 16px;
+  }
+
+  .estadisticas {
+    gap: 13px;
+  }
+
+  .pie {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .filtros {
+    align-items: stretch;
+  }
+
+  .filtros select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .app {
+    padding: 0 10px;
+  }
+
+  .rejilla {
+    gap: 8px;
+  }
+
+  .informacion {
+    padding: 9px;
+  }
+
+  .tipo {
+    padding: 4px 7px;
+  }
+
+  .estadisticas {
+    gap: 8px;
+  }
+}
